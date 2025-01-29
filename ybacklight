@@ -148,7 +148,7 @@ for (my $i = 0; $i <= $#ARGV; $i++) {
         $action = "get";
     } elsif ($opt =~ /^-(time|steps)$/) {
         warn "$opt not supported, ignoring\n";
-        $i++ if $optarg; # both have an argument
+        $i++ if defined $optarg; # both have an argument
     } elsif ($opt =~ /^([-=+]$num_re)%?$/) {
         usage "Only one action allowed" if $action;
         $action = $1;
